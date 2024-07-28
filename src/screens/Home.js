@@ -36,20 +36,20 @@ export default function Home() {
         <div id="carouselExampleFade" className="carousel slide carousel-fade " data-bs-ride="carousel">
 
           <div className="carousel-inner " id='carousel'>
-            <div class=" carousel-caption  " style={{ zIndex: "9" }}>
+            <div className=" carousel-caption  " style={{ zIndex: "9" }}>
               <div className=" d-flex justify-content-center">  {/* justify-content-center, copy this <form> from navbar for search box */}
                 <input className="form-control me-2 w-75 bg-white text-dark" type="search" placeholder="Search in here..." aria-label="Search" value={search} onChange={(e) => { setSearch(e.target.value) }} />
                 <button className="btn text-white bg-danger" onClick={() => { setSearch('') }}>X</button>
               </div>
             </div>
             <div className="carousel-item active" >
-              <img src="https://source.unsplash.com/random/900x700/?burger" className="d-block w-100  " style={{ filter: "brightness(30%)" }} alt="..." />
+              <img src="https://th.bing.com/th/id/OIP.g_EYshV4TBrKFonMmN2KEgHaE7?w=252&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" className="d-block w-100  " style={{ filter: "brightness(30%)" }} alt="..." />
             </div>
             <div className="carousel-item">
-              <img src="https://source.unsplash.com/random/900x700/?pastry" className="d-block w-100 " style={{ filter: "brightness(30%)" }} alt="..." />
+              <img src="https://th.bing.com/th/id/OIP.8UeIFPMYwIErE1ShRYB9QAHaEo?w=275&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7y" className="d-block w-100 " style={{ filter: "brightness(30%)" }} alt="..." />
             </div>
             <div className="carousel-item">
-              <img src="https://source.unsplash.com/random/900x700/?barbeque" className="d-block w-100 " style={{ filter: "brightness(30%)" }} alt="..." />
+              <img src="https://th.bing.com/th/id/OIP.HCW0hTLwX6514qnSXCWjzAHaHa?w=225&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" className="d-block w-100 " style={{ filter: "brightness(30%)" }} alt="..." />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -64,7 +64,7 @@ export default function Home() {
       </div>
       <div className='container'> {/* boootstrap is mobile first */}
         {
-          foodCat !== []
+          foodCat != []
             ? foodCat.map((data) => {
               return (
                 // justify-content-center
@@ -73,7 +73,7 @@ export default function Home() {
                     {data.CategoryName}
                   </div>
                   <hr id="hr-success" style={{ height: "4px", backgroundImage: "-webkit-linear-gradient(left,rgb(0, 255, 137),rgb(0, 0, 0))" }} />
-                  {foodItems !== [] ? foodItems.filter(
+                  {foodItems != [] ? foodItems.filter(
                     (items) => (items.CategoryName === data.CategoryName) && (items.name.toLowerCase().includes(search.toLowerCase())))
                     .map(filterItems => {
                       return (
